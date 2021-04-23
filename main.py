@@ -4,6 +4,7 @@ import time
 import getpass
 from Login import Login
 from SignUp import SignUp
+from Encryption import Encrypt
 
 
 def login():
@@ -44,6 +45,8 @@ def sign_up():
 
 
 if __name__ == "__main__":
+    userlist = "users.txt"
+    user_file = Encrypt(userlist)
     os.system("cls")
     functions = {
         "1": login,
@@ -51,6 +54,10 @@ if __name__ == "__main__":
     }
 
     while True:
+        try:
+            user_file.decryption()
+        except:
+            pass
         os.system("cls")
         print("[ LOGIN SYSTEM ]\n"
             "[0] Exit\n"
@@ -70,3 +77,5 @@ if __name__ == "__main__":
             print("Enter valid option please...")
             time.sleep(1)
             continue
+        
+        user_file.encryption()

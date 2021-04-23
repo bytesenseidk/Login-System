@@ -36,3 +36,12 @@ class Encrypt(object):
         decrypted = fernet.decrypt(encrypted)
         with open(self.file, "wb") as dec_file:
             dec_file.write(decrypted)  
+
+
+
+if __name__ == "__main__":
+    file = "users.txt"
+    encrypt = Encrypt(file)
+    encrypt.encryption()
+    # encrypt.decryption()
+    
