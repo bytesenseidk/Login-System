@@ -13,7 +13,8 @@ def login():
         print("[ LOGIN ]")
         username = input("ENTER USERNAME  >> ")
         password = getpass.getpass("ENTER PASSWORD  >> ")
-        if Login.valid_user(username, password):
+        user = Login(username, password)
+        if user.valid_user():
             print("Login Successful!")
             time.sleep(1)
             break
@@ -52,12 +53,16 @@ while True:
     choice = input("  >> ")
     if choice == "0":
         break
-    try:
-        os.system("cls")
-        function = functions[choice]
-        function()
-    except:
-        os.system("cls")
-        print("Enter valid option please...")
-        time.sleep(1)
-        continue
+    os.system("cls")
+    function = functions[choice]
+    function()
+    
+    # try:
+    #     os.system("cls")
+    #     function = functions[choice]
+    #     function()
+    # except:
+    #     os.system("cls")
+    #     print("Enter valid option please...")
+    #     time.sleep(1)
+    #     continue
