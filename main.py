@@ -2,7 +2,6 @@ import os
 import sys
 import time
 import getpass
-import keyboard
 from Login import Login
 from SignUp import SignUp
 from Encryption import Encrypt
@@ -17,15 +16,12 @@ def login():
         user = Login(username, password)
         if user.valid_user():
             print("Login Successful!")
+            time.sleep(1)
             break
         else:
             print("Login Unsuccessful, try again..")
             time.sleep(1)
             continue
-    print("\n\nPress Enter to continue...")
-    while True:
-        if keyboard.is_pressed("enter"):
-            break
 
 
 def sign_up():
@@ -43,13 +39,8 @@ def sign_up():
     user = SignUp(username, password)
     user.save()
     os.system("cls")
-    print("account added")
-    print("\n\nPress Enter to continue...")
-    while True:
-        if keyboard.is_pressed("enter"):
-            break
-    return 0
-    
+    print("Account Added")
+    time.sleep(1)
 
 if __name__ == "__main__":
     userlist = "users.txt"
