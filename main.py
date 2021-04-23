@@ -24,9 +24,9 @@ def login():
 
 
 def sign_up():
-    os.system("cls")
-    print("[ SIGN UP ]")
     while True:
+        os.system("cls")
+        print("[ SIGN UP ]")
         username = input("ENTER USERNAME  >> ")
         if SignUp.valid_username(username):
             break
