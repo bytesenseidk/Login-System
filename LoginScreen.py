@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 import getpass
 
 def exit():
@@ -7,6 +8,7 @@ def exit():
 
 def login():
     while True:
+        os.system("cls")
         print("[ LOGIN ]")
         username = input("ENTER USERNAME  >> ")
         password = getpass.getpass("ENTER PASSWORD  >> ")
@@ -15,6 +17,7 @@ def login():
             break
         else:
             print("Login Unsuccessful, try again..")
+            time.sleep(.8)
             continue
 
 
