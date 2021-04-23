@@ -30,29 +30,3 @@ class SignUp(object):
                         valid = False
         return valid
 
-
-# def sign_up():
-#     print("[ SIGN UP ]")
-#     while True:
-#         username = input("ENTER USERNAME  >> ")
-#         if valid_username(username):
-#             break
-#         else:
-#             print("Username Taken, try again..")
-#             continue
-#     password = getpass.getpass("ENTER PASSWORD  >> ")
-#     account_count()
-#     with open("users.txt", "a") as file:
-#         user_id = account_count()
-#         user = {
-#             "username": username,
-#             "password": password,
-#             "user_id": user_id
-#         }
-#         file.write(f"{user['username']},{user['password']},{user['user_id']}\n")
-#     os.system("cls")
-#     print("account added")
-#     time.sleep(1)
-
-
-

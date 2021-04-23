@@ -6,7 +6,6 @@ from Login import Login
 from SignUp import SignUp
 
 
-
 def login():
     while True:
         os.system("cls")
@@ -25,6 +24,7 @@ def login():
 
 
 def sign_up():
+    os.system("cls")
     print("[ SIGN UP ]")
     while True:
         username = input("ENTER USERNAME  >> ")
@@ -41,32 +41,31 @@ def sign_up():
     time.sleep(1)
     
 
-os.system("cls")
-functions = {
-    "1": login,
-    "2": sign_up
-}
 
-while True:
+if __name__ == "__main__":
     os.system("cls")
-    print("[ LOGIN SYSTEM ]\n"
-        "[0] Exit\n"
-        "[1] LOGIN\n"
-        "[2] SIGN UP\n")
+    functions = {
+        "1": login,
+        "2": sign_up
+    }
 
-    choice = input("  >> ")
-    if choice == "0":
-        break
-    os.system("cls")
-    function = functions[choice]
-    function()
-    
-    # try:
-    #     os.system("cls")
-    #     function = functions[choice]
-    #     function()
-    # except:
-    #     os.system("cls")
-    #     print("Enter valid option please...")
-    #     time.sleep(1)
-    #     continue
+    while True:
+        os.system("cls")
+        print("[ LOGIN SYSTEM ]\n"
+            "[0] Exit\n"
+            "[1] LOGIN\n"
+            "[2] SIGN UP\n")
+
+        choice = input("  >> ")
+        if choice == "0":
+            break
+        
+        try:
+            os.system("cls")
+            function = functions[choice]
+            function()
+        except:
+            os.system("cls")
+            print("Enter valid option please...")
+            time.sleep(1)
+            continue
