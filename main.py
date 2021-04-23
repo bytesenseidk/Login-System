@@ -31,8 +31,8 @@ def sign_up():
         if SignUp.valid_username(username):
             break
         else:
-            time.sleep(1)
             print("Username Taken, try again..")
+            time.sleep(1)
             continue
     password = getpass.getpass("ENTER PASSWORD  >> ")
     user = SignUp(username, password)
