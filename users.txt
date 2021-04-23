@@ -1,12 +1,1 @@
-user_0,pass_0,0
-user_1,pass_1,1
-user,pass,2
-user_4,pass_4,3
-user_5,pass_5,4
-user_6,pass_6,5
-user_7,pass_7,6
-user_8,pass,7
-user2,pass,8
-user4,pass,9
-newuser,pass,10
-test,test,11
+user,pass,0
