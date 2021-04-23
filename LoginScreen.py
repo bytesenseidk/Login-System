@@ -2,6 +2,8 @@ import os
 import sys
 import time
 import getpass
+from Login import valid_user
+from SignUp import valid_username, save
 
 def exit():
     sys.exit()
@@ -33,7 +35,6 @@ def valid_user(username=None, password=None):
     return valid
 
 
-
 def sign_up():
     print("[ SIGN UP ]")
     while True:
@@ -56,7 +57,6 @@ def sign_up():
     os.system("cls")
     print("account added")
     time.sleep(1)
-
 
 def account_count():
     with open("users.txt", "r") as file:
@@ -104,3 +104,4 @@ while True:
         print("Enter valid option please...")
         time.sleep(1)
         continue
+
