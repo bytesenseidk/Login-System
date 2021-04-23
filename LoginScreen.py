@@ -15,10 +15,11 @@ def login():
         password = getpass.getpass("ENTER PASSWORD  >> ")
         if valid_user(username, password):
             print("Login Successful!")
+            time.sleep(1)
             break
         else:
             print("Login Unsuccessful, try again..")
-            time.sleep(.8)
+            time.sleep(1)
             continue
 
 
@@ -41,7 +42,9 @@ def sign_up():
             "user_id": user_id
         }
         file.write(f"{user['username']},{user['password']},{user['user_id']}\n")
+    os.system("cls")
     print("account added")
+    time.sleep(1)
 
 
 def account_count():
@@ -79,23 +82,26 @@ def valid_username(username=None):
 
 os.system("cls")
 functions = {
-    "0": exit,
     "1": login,
     "2": sign_up
 }
 
-
-print("[ LOGIN SYSTEM ]\n"
-      "[0] Exit\n"
-      "[1] LOGIN\n"
-      "[2] SIGN UP\n")
-
-choice = input("  >> ")
-
-try:
+while True:
     os.system("cls")
-    function = functions[choice]
-    function()
-except Exception:
-    print("Enter valid option please...")
-    print(Exception)
+    print("[ LOGIN SYSTEM ]\n"
+        "[0] Exit\n"
+        "[1] LOGIN\n"
+        "[2] SIGN UP\n")
+
+    choice = input("  >> ")
+    if choice == "0":
+        break
+    try:
+        os.system("cls")
+        function = functions[choice]
+        function()
+    except:
+        os.system("cls")
+        print("Enter valid option please...")
+        time.sleep(1)
+        continue
