@@ -34,7 +34,11 @@ def sign_up():
             print("Username Taken, try again..")
             continue
     password = getpass.getpass("ENTER PASSWORD  >> ")
-    SignUp.save(username, password)
+    user = SignUp(username, password)
+    user.save()
+    os.system("cls")
+    print("account added")
+    time.sleep(1)
     
 
 os.system("cls")

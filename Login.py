@@ -1,4 +1,3 @@
-
 class Login(object):
     def __init__(self, username=None, password=None):
         self.username = username
@@ -14,18 +13,3 @@ class Login(object):
                         valid = True
         return valid    
         
-# def login():
-#     while True:
-#         os.system("cls")
-#         print("[ LOGIN ]")
-#         username = input("ENTER USERNAME  >> ")
-#         password = getpass.getpass("ENTER PASSWORD  >> ")
-#         if valid_user(username, password):
-#             print("Login Successful!")
-#             time.sleep(1)
-#             break
-#         else:
-#             print("Login Unsuccessful, try again..")
-#             time.sleep(1)
-#             continue
-
