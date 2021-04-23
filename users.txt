@@ -1,0 +1,2 @@
+user_0,pass_0,0
+user_1,pass_1,1
