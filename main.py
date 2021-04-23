@@ -42,6 +42,7 @@ def sign_up():
     print("Account Added")
     time.sleep(1)
 
+
 if __name__ == "__main__":
     userlist = "users.txt"
     user_file = Encrypt(userlist)
