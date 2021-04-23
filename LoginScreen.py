@@ -22,6 +22,17 @@ def login():
             time.sleep(1)
             continue
 
+def valid_user(username=None, password=None):
+    valid = False
+    with open("users.txt", "r") as file:
+        text = file.readlines()
+        for line in text:
+            for user in line.split("\n"):
+                if username == user.split(",")[0] and password == user.split(",")[1]:
+                    valid = True
+    return valid
+
+
 
 def sign_up():
     print("[ SIGN UP ]")
@@ -56,18 +67,6 @@ def account_count():
             return count + 1
         except:
             return 0
-
-
-def valid_user(username=None, password=None):
-    valid = False
-    with open("users.txt", "r") as file:
-        text = file.readlines()
-        for line in text:
-            for user in line.split("\n"):
-                if username == user.split(",")[0] and password == user.split(",")[1]:
-                    valid = True
-    return valid
-
 
 def valid_username(username=None):
     valid = True
