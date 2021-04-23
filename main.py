@@ -43,7 +43,6 @@ def sign_up():
     time.sleep(1)
     
 
-
 if __name__ == "__main__":
     userlist = "users.txt"
     user_file = Encrypt(userlist)
@@ -79,3 +78,5 @@ if __name__ == "__main__":
             continue
         
         user_file.encryption()
+
+

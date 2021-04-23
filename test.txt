@@ -1,6 +1,0 @@
-user,pass,0
-user1,pass1,1
-user2,pass2,2
-user,pass,0
-user1,pass1,1
-user2,pass2,2
