@@ -2,8 +2,6 @@ import os
 import sys
 import time
 import getpass
-from Login import valid_user
-from SignUp import valid_username, save
 
 def exit():
     sys.exit()
