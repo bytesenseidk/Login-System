@@ -6,10 +6,16 @@ def exit():
     sys.exit()
 
 def login():
-    print("[ LOGIN ]")
-    username = input("ENTER USERNAME  >> ")
-    password = getpass.getpass("ENTER PASSWORD  >> ")
-    print(valid_user(username, password))
+    while True:
+        print("[ LOGIN ]")
+        username = input("ENTER USERNAME  >> ")
+        password = getpass.getpass("ENTER PASSWORD  >> ")
+        if valid_user(username, password):
+            print("Login Successful!")
+            break
+        else:
+            print("Login Unsuccessful, try again..")
+            continue
 
 
 def account_count():
