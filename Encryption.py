@@ -3,8 +3,12 @@ from cryptography.fernet import Fernet
 class Encrypt(object):
     def __init__(self, file):
         self.file = file
-        self.key = self.key_reader()
-    
+        try:
+            self.key = self.key_reader()
+        except:
+            self.key_generator()
+            self.key = self.key_reader()
+            
     def key_reader(self):
         with open("keyfile.txt", "rb") as filekey:
             key = filekey.read()
