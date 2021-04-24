@@ -36,10 +36,12 @@ class UserMenu(object):
         
     def exit(self):
         print("Exitting..")
+        time.sleep(1)
 
     def print_data(self):
-        self.structure_database()
-
+        # self.structure_database()
+        pass
+    
     def add_data(self):
         print("Adding data")
 
@@ -48,7 +50,9 @@ class UserMenu(object):
 
     
     def menu(self):
+        os.system("cls")
         print("[ USER MENU ]\n"
+              f"[ SIGNED IN: {self.username} ]\n"
               "[0] EXIT\n"
               "[1] PRINT DATA\n"
               "[2] ADD DATA\n"
@@ -61,5 +65,5 @@ class UserMenu(object):
             self.menu()
 
 
-if __name__ == "__main__":
-    UserMenu().menu()
+# if __name__ == "__main__":
+#     UserMenu().menu()

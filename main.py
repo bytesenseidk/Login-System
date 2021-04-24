@@ -5,6 +5,7 @@ import getpass
 from Login import Login
 from SignUp import SignUp
 from Encryption import Encrypt
+from UserMenu import UserMenu
 
 
 def login():
@@ -17,6 +18,8 @@ def login():
         if user.valid_user():
             print("Login Successful!")
             time.sleep(1)
+            u_menu = UserMenu(username)
+            u_menu.menu()
             break
         else:
             print("Login Unsuccessful, try again..")
