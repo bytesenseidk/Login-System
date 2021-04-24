@@ -1,7 +1,7 @@
 import os
 import time
 import sqlite3
-
+from Database import Database
 
 class UserMenu(object):
     def __init__(self, username=None):
@@ -12,6 +12,7 @@ class UserMenu(object):
             "2": self.add_data,
             "3": self.delete_data
         }
+        self.db = Database(self.username)
     
     def structure_database(self):
         column_names = []
@@ -36,14 +37,23 @@ class UserMenu(object):
         
     def exit(self):
         print("Exitting..")
+        self.db.cursor.close()
+        self.db.connection.close()
         time.sleep(1)
 
     def print_data(self):
-        # self.structure_database()
-        pass
+        self.db.read_data()
+        time.sleep(2)
     
     def add_data(self):
-        print("Adding data")
+        os.system("cls")
+        print("[ ADD DATA ]")
+        data_name = input("Enter name  >> ")
+        data_desc = input("Enter description  >> ")
+        self.db.add_data(data_name, data_desc)
+        print("\n\nData added..")
+        time.sleep(1)
+        
 
     def delete_data(self):
         print("Deleting data")

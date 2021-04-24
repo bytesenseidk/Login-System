@@ -2,11 +2,18 @@ import os
 import sys
 import time
 import getpass
+import sqlite3
 from Login import Login
 from SignUp import SignUp
 from Encryption import Encrypt
 from UserMenu import UserMenu
 
+# class Main(object):
+#     def __init__(self):
+#         pass
+    
+#     def database_connection(self):
+        
 
 def login():
     while True:
