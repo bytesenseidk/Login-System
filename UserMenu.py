@@ -12,25 +12,7 @@ class UserMenu(object):
             "2": self.add_data,
             "3": self.delete_data
         }
-        self.db = Database(self.username)
-    
-    def structure_database(self):
-        column_names = []
-        os.system("cls")
-        print("[ FIRST TIME DATABASE SETUP ]")
-        try:
-            columns = int(input("Amount of columns  >> "))
-            for col in range(columns):
-                col_name = input(f"Enter column {col} name  >> ")
-                column_names.append(col_name)
-        except:
-            print("Enter valid data please..")
-            time.sleep(1)
-            self.structure_database()
-        
-        
-        return column_names
-                
+        self.db = Database(self.username)            
         
     def personal_data(self):
         pass
