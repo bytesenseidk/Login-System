@@ -32,7 +32,7 @@ class UserMenu(object):
         print("[ ADD DATA ]")
         data_name = input("Enter name  >> ")
         data_desc = input("Enter description  >> ")
-        self.db.add_data(data_name, data_desc)
+#         self.db.add_data(data_name, data_desc)
         print("\n\nData added..")
         time.sleep(1)
         
