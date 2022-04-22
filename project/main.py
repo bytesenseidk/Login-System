@@ -8,12 +8,6 @@ from SignUp import SignUp
 from Encryption import Encrypt
 from UserMenu import UserMenu
 
-# class Main(object):
-#     def __init__(self):
-#         pass
-    
-#     def database_connection(self):
-        
 
 def login():
     while True:
@@ -25,8 +19,6 @@ def login():
         if user.valid_user():
             print("Login Successful!")
             time.sleep(1)
-            # u_menu = UserMenu(username)
-            # u_menu.menu()
             break
         else:
             print("Login Unsuccessful, try again..")
