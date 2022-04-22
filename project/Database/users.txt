@@ -1,6 +1,0 @@
-user,pass,0
-user_1,pass_1,1
-user_2,pass_2,2
-user_3,pass_3,3
-user_4,user_4,4
-test_user,password,5
