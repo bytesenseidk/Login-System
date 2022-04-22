@@ -7,9 +7,6 @@ class SignUp(object):
         self.user_id = self.account_count()
     
     def account_count(self):
-        if not os.path.exists("Database//users.txt"):
-            open("Database//users.txt", "a").close()
-
         with open("Database//users.txt", "r") as file:
             text = file.readlines()
             try:

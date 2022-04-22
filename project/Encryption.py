@@ -1,3 +1,4 @@
+import os
 from cryptography.fernet import Fernet
 
 class Encrypt(object):
@@ -9,6 +10,9 @@ class Encrypt(object):
         except:
             self.key_generator()
             self.key = self.key_reader()
+        
+        if not os.path.exists("Database//users.txt"):
+            open("Database//users.txt", "a").close()
             
     def key_reader(self):
         with open(self.keyfile, "rb") as filekey:
