@@ -2,10 +2,11 @@ class Login(object):
     def __init__(self, username=None, password=None):
         self.username = username
         self.password = password
+        self.userlist = "/Database//users.txt"
     
     def valid_user(self):
         valid = False
-        with open("users.txt", "r") as file:
+        with open(self.userlist, "r") as file:
             text = file.readlines()
             for line in text:
                 for user in line.split("\n"):

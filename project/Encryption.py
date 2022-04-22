@@ -3,7 +3,7 @@ from cryptography.fernet import Fernet
 class Encrypt(object):
     def __init__(self, file):
         self.file = file
-        self.keyfile = "project//Database//keyfile.txt"
+        self.keyfile = "Database//keyfile.txt"
         try:
             self.key = self.key_reader()
         except:

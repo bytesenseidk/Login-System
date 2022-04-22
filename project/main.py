@@ -54,7 +54,7 @@ def sign_up():
 
 
 if __name__ == "__main__":
-    userlist = "users.txt"
+    userlist = "Database//users.txt"
     user_file = Encrypt(userlist)
     os.system("cls")
     functions = {
@@ -65,9 +65,11 @@ if __name__ == "__main__":
     while True:
         try:
             user_file.decryption()
-        except:
-            pass
+        except Exception as e:
+            print(e)
+
         os.system("cls")
+        
         print("[ LOGIN SYSTEM ]\n"
             "[0] Exit\n"
             "[1] LOGIN\n"
@@ -82,8 +84,9 @@ if __name__ == "__main__":
             function()
         except:
             os.system("cls")
+            print(function())
             print("Enter valid option please...")
-            time.sleep(1)
+            time.sleep(5)
             continue
         
     user_file.encryption()
