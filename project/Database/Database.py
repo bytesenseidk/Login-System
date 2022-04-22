@@ -22,7 +22,7 @@ class Database(metaclass=MetaSingleton):
         
     def connect(self):
         if self.connection is None:
-            self.connection = sqlite3.connect("project//Database//Database_file.db")
+            self.connection = sqlite3.connect("Database//Database_file.db")
             self.cursor = self.connection.cursor()
         return self.cursor, self.connection
     

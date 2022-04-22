@@ -2,7 +2,7 @@ class Login(object):
     def __init__(self, username=None, password=None):
         self.username = username
         self.password = password
-        self.userlist = "/Database//users.txt"
+        self.userlist = "Database//users.txt"
     
     def valid_user(self):
         valid = False

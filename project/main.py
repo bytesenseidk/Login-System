@@ -39,6 +39,7 @@ def sign_up():
         os.system("cls")
         print("[ SIGN UP ]")
         username = input("ENTER USERNAME  >> ")
+
         if SignUp.valid_username(username):
             break
         else:
@@ -82,11 +83,12 @@ if __name__ == "__main__":
             os.system("cls")
             function = functions[choice]
             function()
-        except:
+        except Exception as e:
             os.system("cls")
-            print(function())
             print("Enter valid option please...")
-            time.sleep(5)
+            print(e)
+            print(os.getcwd())
+            time.sleep(10)
             continue
         
     user_file.encryption()
