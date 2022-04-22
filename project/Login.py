@@ -2,7 +2,6 @@ class Login(object):
     def __init__(self, username=None, password=None):
         self.username = username
         self.password = password
-        self.userlist = "Database//users.txt"
     
     def valid_user(self):
         valid = False
@@ -12,5 +11,5 @@ class Login(object):
                 for user in line.split("\n"):
                     if self.username == user.split(",")[0] and self.password == user.split(",")[1]:
                         valid = True
-        return valid    
+        return valid
         

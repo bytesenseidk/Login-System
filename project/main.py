@@ -25,8 +25,8 @@ def login():
         if user.valid_user():
             print("Login Successful!")
             time.sleep(1)
-            u_menu = UserMenu(username)
-            u_menu.menu()
+            # u_menu = UserMenu(username)
+            # u_menu.menu()
             break
         else:
             print("Login Unsuccessful, try again..")
@@ -86,9 +86,7 @@ if __name__ == "__main__":
         except Exception as e:
             os.system("cls")
             print("Enter valid option please...")
-            print(e)
-            print(os.getcwd())
-            time.sleep(10)
+            time.sleep(2)
             continue
         
     user_file.encryption()
