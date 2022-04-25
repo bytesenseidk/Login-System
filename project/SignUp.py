@@ -7,6 +7,7 @@ class SignUp(object):
         self.password = password
         self.user_id = self.account_count()
     
+    
     def account_count(self):
         with open("Database//users.txt", "r") as file:
             text = file.readlines()
@@ -16,6 +17,7 @@ class SignUp(object):
                 return count + 1
             except:
                 return 0
+
 
     def save(self):
         with open("Database//users.txt", "a") as file:
