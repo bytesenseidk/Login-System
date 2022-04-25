@@ -1,12 +1,9 @@
 import os
-import sys
 import time
 import getpass
-import sqlite3
 from Login import Login
 from SignUp import SignUp
 from Encryption import Encrypt
-from UserMenu import UserMenu
 
 
 def login():

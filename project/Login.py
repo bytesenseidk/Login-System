@@ -3,6 +3,7 @@ class Login(object):
         self.username = username
         self.password = password
     
+    
     def valid_user(self):
         valid = False
         with open("Database//users.txt", "r") as file:
