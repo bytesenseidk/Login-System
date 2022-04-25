@@ -3,10 +3,10 @@ class Login(object):
         self.username = username
         self.password = password
     
-    
+
     def valid_user(self):
         valid = False
-        with open("Database//users.txt", "r") as file:
+        with open("Database//users.csv", "r") as file:
             text = file.readlines()
             for line in text:
                 for user in line.split("\n"):

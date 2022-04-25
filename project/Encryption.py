@@ -12,8 +12,8 @@ class Encrypt(object):
             self.key_generator()
             self.key = self.key_reader()
         
-        if not os.path.exists("Database//users.txt"):
-            open("Database//users.txt", "a").close()
+        if not os.path.exists("Database//users.csv"):
+            open("Database//users.csv", "a").close()
             
 
     def key_reader(self):
@@ -40,7 +40,7 @@ class Encrypt(object):
         with open(self.file, "wb") as encrypted_file:
             encrypted_file.write(encrypted)
     
-    
+
     def decryption(self):
         fernet = Fernet(self.key)
         with open(self.file, "rb") as enc_file:

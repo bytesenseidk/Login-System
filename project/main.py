@@ -44,7 +44,7 @@ def sign_up():
 
 
 if __name__ == "__main__":
-    userlist = "Database//users.txt"
+    userlist = "Database//users.csv"
     user_file = Encrypt(userlist)
     os.system("cls")
     functions = {

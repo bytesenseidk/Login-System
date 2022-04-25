@@ -7,9 +7,9 @@ class SignUp(object):
         self.password = password
         self.user_id = self.account_count()
     
-    
+
     def account_count(self):
-        with open("Database//users.txt", "r") as file:
+        with open("Database//users.csv", "r") as file:
             text = file.readlines()
             try:
                 for index, line in enumerate(text):
@@ -20,15 +20,15 @@ class SignUp(object):
 
 
     def save(self):
-        with open("Database//users.txt", "a") as file:
+        with open("Database//users.csv", "a") as file:
             file.write(f"{self.username},{self.password},{self.user_id}\n")
     
     
     @staticmethod
     def valid_username(username):
         valid = True
-        if os.path.exists("Database//users.txt"):
-            with open("Database//users.txt", "r") as file:
+        if os.path.exists("Database//users.csv"):
+            with open("Database//users.csv", "r") as file:
                 text = file.readlines()
                 for line in text:
                     for user in line.split("\n"):
