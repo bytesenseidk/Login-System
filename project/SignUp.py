@@ -35,4 +35,3 @@ class SignUp(object):
                         if username == user.split(",")[0]:
                             valid = False
         return valid
-
