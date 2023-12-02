@@ -12,7 +12,7 @@ class Navigations(object):
         screens.addWidget(self.login_screen)
         screens.setCurrentIndex(screens.currentIndex() + 1)
         
-        
+
     def register_page(self):
         self.close()
         self.signup_screen = SignUpScreen()
@@ -58,7 +58,7 @@ class LoginScreen(QMainWindow, Navigations):
             else:
                 self.feedback_label.setText("Invalid username or password")
         except Exception as e:
-            self.feedback_label.setText("Invalid username or password")
+            self.feedback_label.setText(e)
 
 
 class WelcomeScreen(QMainWindow, Navigations):
