@@ -12,22 +12,26 @@ class Navigations(object):
         screens.addWidget(self.login_screen)
         screens.setCurrentIndex(screens.currentIndex() + 1)
         
+        
     def register_page(self):
         self.close()
         self.signup_screen = SignUpScreen()
         screens.addWidget(self.signup_screen)
         screens.setCurrentIndex(screens.currentIndex() + 1)
     
+
     def welcome_page(self, username):
         self.close()
         self.welcome_screen = WelcomeScreen(username)
         screens.addWidget(self.welcome_screen)
         screens.setCurrentIndex(screens.currentIndex() + 1)
         
+
     def exit(self):
         self.closeDb()
         sys.exit()
         
+
     def closeDb(self):
         self.database.cursor.close()
         self.database.connection.close()
@@ -43,6 +47,7 @@ class LoginScreen(QMainWindow, Navigations):
         self.exit_button.clicked.connect(self.exit)
         self.database = Database()
         
+
     def login(self):
         username = self.username_input.text()
         password = self.password_input.text()
@@ -78,21 +83,31 @@ class SignUpScreen(QMainWindow, Navigations):
         self.exit_button.clicked.connect(self.exit)
         self.database = Database()   
         
+
     def sign_up(self):
-        if len(self.username_input.text()) > 4 and len(self.password_input.text()) > 4:
-            if self.password_input.text() == self.confirm_password_input.text():    
-                username = self.username_input.text()
-                password = self.password_input.text()
-                user_data = self.database.get_account(username)
-                if user_data["username"] is None:
-                    self.database.save_account(username, password)
-                    self.login_page()
-                else:
-                    self.feedback_label.setText("Username already exists!")
+        def _validate_input(username, password, v_password):
+            user_len = lambda username: "True" if len(username) > 5 and len(username) < 15 else "Min. 6 & Max. 16 characters in usernames."
+            same_pass = lambda password, v_password: "True" if password == v_password else "Passwords do not match!"
+            pass_len = lambda password: "True" if len(password) > 7 and len(password) < 63 else "Min. 8 & Max. 64 characters in passwords"
+            conditions = [user_len(username), same_pass(password, v_password), pass_len(password)]
+            for condition in conditions:
+                if condition != "True":
+                    return condition
+            return "True"
+
+        username = self.username_input.text()
+        password = self.password_input.text()
+        v_password = self.confirm_password_input.text()
+        result = _validate_input(username, password, v_password)
+        if result == "True":
+            user_data = self.database.get_account(username)
+            if user_data["username"] is None:
+                self.database.save_account(username, password)
+                self.login_page()
             else:
-                self.feedback_label.setText("Passwords do not match")
+                self.feedback_label.setText("Username already exists!")
         else:
-            self.feedback_label.setText("Username and Password must be at least 5 characters")
+            self.feedback_label.setText(result)
     
 
 if __name__ == "__main__":
