@@ -4,6 +4,8 @@ Login application with password encryption
 # Description
 Python project
 PyQt5 Graphical User Interface (GUI)
+Argon2 Password Hashing
+SqLite3 Database
 
 - Login  
   - Simple login screen.  
