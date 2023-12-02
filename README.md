@@ -2,10 +2,7 @@
 Login application with password encryption
 
 # Description
-Python project
-PyQt5 Graphical User Interface (GUI)
-Argon2 Password Hashing
-SqLite3 Database
+Login Application & User Management system written in Python. Users are stored on a SQLite3 database with Argon2 hashed passwords, all displayed in a PyQt5 GUI.
 
 - Login  
   - Simple login screen.  
