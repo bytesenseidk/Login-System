@@ -1,5 +1,3 @@
-![image](https://github.com/bytesenseidk/Login-System/assets/50791042/ea0abf9f-ee43-44eb-9537-268331a88724)
-
 # Login-System
 Login application with password encryption
 
@@ -17,6 +15,8 @@ PyQt5 Graphical User Interface (GUI)
   - Checks for duplicate username under registration.
   - Encrypts password.  
   - Saves data to database.
+ 
+![image](https://github.com/bytesenseidk/Login-System/assets/50791042/ea0abf9f-ee43-44eb-9537-268331a88724)
 
 # Authors
 [Byte Sensei](https://github.com/bytesenseidk)
