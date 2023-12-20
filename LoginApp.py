@@ -11,26 +11,22 @@ class Navigations(object):
         self.login_screen = LoginScreen()
         screens.addWidget(self.login_screen)
         screens.setCurrentIndex(screens.currentIndex() + 1)
-        
 
     def register_page(self):
         self.close()
         self.signup_screen = SignUpScreen()
         screens.addWidget(self.signup_screen)
         screens.setCurrentIndex(screens.currentIndex() + 1)
-    
 
     def welcome_page(self, username):
         self.close()
         self.welcome_screen = WelcomeScreen(username)
         screens.addWidget(self.welcome_screen)
         screens.setCurrentIndex(screens.currentIndex() + 1)
-        
 
     def exit(self):
         self.closeDb()
         sys.exit()
-        
 
     def closeDb(self):
         self.database.cursor.close()
@@ -45,8 +41,7 @@ class LoginScreen(QMainWindow, Navigations):
         self.login_button.clicked.connect(self.login)
         self.signup_button.clicked.connect(self.register_page)
         self.exit_button.clicked.connect(self.exit)
-        self.database = Database()
-        
+        self.database = Database()        
 
     def login(self):
         username = self.username_input.text()
@@ -60,18 +55,6 @@ class LoginScreen(QMainWindow, Navigations):
         except Exception as e:
             self.feedback_label.setText(e)
 
-
-class WelcomeScreen(QMainWindow, Navigations):
-    def __init__(self, username):
-        self.username = username.split('@')[0]
-        super(WelcomeScreen, self).__init__()
-        loadUi('Screens/WelcomeScreen.ui', self)
-        screens.setWindowTitle("Login System | Welcome")
-        self.welcome_label.setText(f"Welcome {self.username}")
-        self.logout_button.clicked.connect(self.login_page)
-        self.exit_button.clicked.connect(self.exit)
-        self.database = Database()
-
         
 class SignUpScreen(QMainWindow, Navigations):
     def __init__(self):
@@ -82,7 +65,6 @@ class SignUpScreen(QMainWindow, Navigations):
         self.login_button.clicked.connect(self.login_page)
         self.exit_button.clicked.connect(self.exit)
         self.database = Database()   
-        
 
     def sign_up(self):
         def _validate_input(username, password, v_password):
@@ -109,6 +91,18 @@ class SignUpScreen(QMainWindow, Navigations):
         else:
             self.feedback_label.setText(result)
     
+
+class WelcomeScreen(QMainWindow, Navigations):
+    def __init__(self, username):
+        self.username = username.split('@')[0]
+        super(WelcomeScreen, self).__init__()
+        loadUi('Screens/WelcomeScreen.ui', self)
+        screens.setWindowTitle("Login System | Welcome")
+        self.welcome_label.setText(f"Welcome {self.username}")
+        self.logout_button.clicked.connect(self.login_page)
+        self.exit_button.clicked.connect(self.exit)
+        self.database = Database()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
